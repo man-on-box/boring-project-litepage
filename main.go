@@ -44,7 +44,7 @@ func handleHomepage() func(w io.Writer) {
 	}{}
 
 	data.Metrics = []Metric{
-		{Value: "1,234", Label: "Lines of code", Icon: "assets/icons/code.svg"},
+		{Value: "174", Label: "Lines of code", Icon: "assets/icons/code.svg"},
 		{Value: "2", Label: "Dependencies", Icon: "assets/icons/cube.svg"},
 		{Value: "0", Label: "Dependabot alerts", Icon: "assets/icons/alert.svg"},
 		{Value: "100", Label: "Performance", Icon: "assets/icons/chart.svg"},
