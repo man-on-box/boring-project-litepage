@@ -1,0 +1,55 @@
+<!-- title -->
+{{ define "title" }}{{ .Title }}{{ end }}
+
+<!-- scripts -->
+{{define "scripts"}}{{end}}
+
+<!-- body -->
+{{ define "body" }}
+<main
+  class="flex min-h-screen flex-col items-center justify-center p-4 md:p-24 bg-gradient-to-b from-white to-pink-50"
+>
+  <div class="max-w-3xl w-full space-y-12 text-center">
+    <div class="space-y-4">
+      <div
+        class="inline-block px-3 py-1 mb-2 text-sm font-medium text-pink-700 bg-pink-100 rounded-full"
+      >
+        Litepage Project
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight">
+        This page was built with
+        <span class="text-pink-600"
+          ><a class="underline" href="https://litepage.dev/">Litepage</a></span
+        >
+      </h1>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+        Welcome to most boring project showcase. These metrics are just
+        placeholders.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {{ range .Metrics }} {{ template "metric-card" .}} {{ end }}
+    </div>
+
+    <div class="pt-4"></div>
+  </div>
+</main>
+{{ end }}
+
+<!-- metric card -->
+{{ define "metric-card" }}
+<div
+  class="flex flex-col items-center justify-center p-6 bg-white rounded-lg border border-pink-100 shadow-md hover:shadow-lg transition-all hover:border-pink-200 group"
+>
+  <div
+    class="p-3 bg-pink-50 rounded-full mb-3 text-pink-500 group-hover:bg-pink-100 transition-colors"
+  >
+    {{ inlineSVG .Icon }}
+  </div>
+  <p class="text-3xl font-bold group-hover:text-pink-600 transition-colors">
+    {{.Value}}
+  </p>
+  <p class="text-muted-foreground">{{.Label}}</p>
+</div>
+{{ end }}
