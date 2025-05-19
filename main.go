@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	lp, err := litepage.New("example.dev", litepage.WithBasePath("/boring-project-litepage"))
+	lp, err := litepage.New("man-on-box.github.io", litepage.WithBasePath("/boring-project-litepage"))
 	if err != nil {
 		log.Fatalf("Could not create app: %v", err)
 	}
